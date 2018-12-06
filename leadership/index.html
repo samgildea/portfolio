@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Digital Storytelling Project</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <style type="text/css">
+    .jumbotron {
+        background-image: url("https://images.pexels.com/photos/248515/pexels-photo-248515.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+        background-size: cover;
+        color: white;
+
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Mono);
+body {
+  font-family: Lato, sans-serif;
+  font-size: 15px;
+  margin: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+main {
+  display: flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.title {
+  color: #fff;
+  text-align: center;
+  font-weight: 300;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  font-size: 2.8em;
+  margin-top: 1.5em;
+}
+.title small {
+  display: block;
+  font-size: 0.6em;
+  margin-top: 0.4em;
+}
+.credits {
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 2em;
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+.window {
+  width: 547px;
+  background: GhostWhite;
+  border-radius: 0.3rem;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.window .window-header {
+  height: 37px;
+  background: Gainsboro;
+  position: relative;
+}
+.window .window-header .action-buttons {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  background: Crimson;
+  border-radius: 50%;
+  box-shadow: 15px 0 0 Orange,
+				30px 0 0 LimeGreen;
+}
+.window .window-header .language {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -10px;
+  height: 21px;
+  padding: 0 1em;
+  text-align: right;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-family: Lato, sans-serif;
+  color: DimGrey;
+}
+.window .window-header .language:before {
+  content: 'asd';
+}
+.window .window-header .language:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.window .window-body {
+  position: relative;
+  height: 300px;
+}
+.window .window-body .code-input,
+.window .window-body .code-output {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border: none;
+  font-family: 'PT Mono', monospace;
+  font-size: 1.8rem;
+  background: transparent;
+  white-space: pre-wrap;
+  line-height: 1.5em;
+  word-wrap: break-word;
+}
+.window .window-body .code-input {
+  opacity: 0.7;
+  margin: 0;
+  color: #999;
+  resize: none;
+}
+.window .window-body .code-output {
+  pointer-events: none;
+  z-index: 3;
+  margin: 0;
+  overflow-y: auto;
+}
+.window .window-body .code-output code {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 1rem;
+  display: block;
+  color: #666;
+  font-size: 0.8rem;
+  font-family: 'PT Mono', monospace;
+}
+a.token {
+  text-decoration: none;
+}
+.token.selector,
+.token.punctuation,
+.token.keyword {
+  color: PaleVioletRed;
+}
+.token.property,
+.token.number,
+.token.string,
+.token.punctuation,
+.token.tag-id {
+  color: DodgerBlue;
+}
+.token.function,
+.token.attr-name {
+  color: CadetBlue;
+}
+.token.atrule .atrule-id {
+  color: BlueViolet;
+}
+.token.boolean {
+  color: LightSlateGray;
+}
+.token.comment {
+  color: DarkGrey;
+}
+.language-php .variable {
+  color: CadetBlue;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">CS1200: Leadership Skill Development</h1>
+        <h3 align="center" class="display-3">By Sam Gildea</h3>
+
+      </div>
+    </div>
+
+    <main class="view">
+	<div class="window">
+		<div class="window-header">
+			<div class="action-buttons"></div>
+			<select class="language">
+				<option value="javascript" selected>DrRacket</option>
+
+			</select>
+		</div>
+		<div class="window-body">
+			<textarea class="code-input">
+;; Welcome to my CS 1200 Leadership Digital Story Telling Project
+;; PS. YOU CAN EDIT THIS !!!!
+
+;; welcome : [List-of String] -> String
+;; takes in a list of words for a greeting and outputs the greeting in a String
+
+(check-expect (welcome (list "Welcome" " " "to" " " "my" " " "project")) "Welcome to my project")
+
+(define (welcome los)
+  (cond
+    [(empty? los) ""]
+    [(cons? los) (string-append (first los) (welcome (rest los)))]))
+
+
+
+</textarea>
+			<pre class="code-output">
+				<code class="language-javascript">
+
+				</code>
+			</pre>
+		</div>
+	</div>
+</main>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <h1 style="text-align: center;">My Most Meaningful Lessons</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Introduction to the Field of Computer Science</h2>
+          <ul>
+            <li><p> I learned about the many different fields of computer science and the many different combined majors offered at Northeastern.</p></li>
+            <li><p> I learned about peer programming and the collabortive aspects of computer science. </p></li>
+          </ul>
+
+        </div>
+        <div class="col-md-4">
+          <h2>Time Management & Prioritization</h2>
+          <ul>
+            <li><p>I created my daily schedule based on the important aspects of course load </p></li>
+            <li><p>I learned how to prioritize my time and use my time in the most efficient way possible</p></li>
+          </ul>
+          
+        </div>
+        <div class="col-md-4">
+          <h2>Introduction to Co-Op</h2>
+          <ul>
+            <li><p>Learned the process of applying for Co-Op and the different ways you can find co-op positions </p></li>
+            <li><p>Learned about the two different times you can do a co-op and the potential benefits of each season</p></li>
+            <li><p>Learned that all Computer Science/Design students must participate in their co-op in the spring</p></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <h1 style="text-align: center;">Passport Series</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Salary Negotiation</h2>
+            <ul>
+              <li> Learned valuable skills about negotiating your salary in a work environment</li>
+              <li> Learned about the resources you can use to determine if it is appropriate to negotiate your salary</li>
+            </ul>
+
+          </div>
+          <div class="col-md-4">
+            <h2> Hindu Musical Night & Refreshments</h2>
+            <ul>
+              <li>This event opened my eyes to the large Hindi/Indian cultural representation on Northeastern’s campus that I was unaware existed at the start of College Career.</li>
+              <li>This event also helped me understand the massive influenced the Hindi musical culture has on music that I personally enjoy, such as instruments like the Sitar and the Tabla.  After this event I looked up more songs that incorporate these instruments and I easily recognized these sounds to be prevalent in music that I enjoy, that I did not know uses Hindi instruments in them. </li>
+            </ul>
+         </div>
+          <div class="col-md-4">
+            <h2> Husky Startup Challenge and Exhibition</h2>
+            <ul>
+              <li>At this event I saw many people who are part of the entrepreneurial clubs on campus with ideas they had for startups.  As someone who is passionate about fashion, one startup idea that stood out to me most was an app called “fancify”.  It was an app that allows you to help style clothes that you have already purchased.  </li>
+
+
+          </div>
+        </div>
+    </div> <!-- /container -->
+
+    <hr>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div align="center">
+      <img style="width: 500px;" src="https://sail.northeastern.edu/app/uploads/2018/03/masteries2.1.svg" />
+      </div>
+
+      <h1 style="text-align: center;">The SAIL Framework</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Well-Being</h2>
+          <p>I experienced the well-being dimensions of SAIL throughout the my time management and prioritization lessons throughout this class.</p>
+        </div>
+        <div class="col-md-4">
+          <h2> Global Mindset</h2>
+          <p> I experienced the global mindset dimensions from SAIL through the passport event, Hindu Musical Night & Refreshments.
+       </div>
+        <div class="col-md-4">
+          <h2> Intellectual Agility</h2>
+          <p> Intellectual Agility is the SAIL dimension that I experienced the most throughout my first semester. Throughout my first semester there were many different skills I learned in all of my classes that contributed to me experiencing this dimension of SAIL.  While attending my 2D fundamentals class, I achieved aesthetic appreciation and design thinking.
+        </div>
+      </div>
+  </div> <!-- /container -->
+  <hr>
+  <div class="container">
+    <!-- Example row of columns -->
+    <h1 style="text-align: center;">My Advice</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Reach Out For Help</h2>
+        <p>While studying computer science at Northeastern, it can be very challenging at times. However, there are many other students struggling with the same issues and there a many different places you can reach out for help that are offered in CCIS. </p>
+      </div>
+      <div class="col-md-4">
+        <h2>Explore Northeastern For Things That Interest You </h2>
+        <p> Throughout my first semester, I was very surprised with the amount of clubs and people that all share interests as me. Having groups of people that all share the same interests as me made my first semester much less stressful and enjoyable.
+     </div>
+      <div class="col-md-4">
+        <h2>Discover What's Important To You And Cut Out Time For Those Things</h2>
+        <p>Throughout my first semester,  one thing that really helped make my time more enjoyable was discovering what truly interestd me and focusing on pursuing those interests. Everyone has different interests and what is interesting to one person isn't always interesting for you. </p>
+      </div>
+    </div>
+</div> <!-- /container -->
+<hr>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
