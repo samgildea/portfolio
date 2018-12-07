@@ -31,7 +31,12 @@
 
     }
 
-    @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Mono);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Mono);
+
+.pics img {
+  width: 250px;
+}
+
 body {
   font-family: Lato, sans-serif;
   font-size: 15px;
@@ -49,6 +54,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+
+
 main {
   display: flex;
   display: -webkit-flex;
@@ -356,6 +364,32 @@ a.token {
     </div>
 </div> <!-- /container -->
 <hr>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="pics">
+  <h1 style="text-align: center;">Pictures!</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Programming </h2>
+      <img src="programming.png" />
+      <p> An example some of the programming assignments I did throughot CS2500.</p>
+
+    </div>
+    <div class="col-md-4">
+      <h2>Design</h2>
+      <img src="yunglean.svg" />
+      <p> An example of the design work I did throughout 2D Fundamentals. </p>
+   </div>
+    <div class="col-md-4">
+      <h2>Music</h2>
+      <img src="maus.jpg" />
+      <p> Meeting one of my favorite artists at Northeastern's After Hours venue. John Maus!</p>
+    </div>
+  </div>
+</div>
+</div> <!-- /container -->
+<hr>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
