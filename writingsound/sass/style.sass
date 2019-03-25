@@ -1,0 +1,21 @@
+@import "compass"
+
+body
+  background-color: #000000
+
+.terminal
+  color: #00FE44
+  line-height: 22px
+  &:after
+    position: absolute
+    top: 214px
+    left: 55px
+    width: 6px
+    height: 18px
+    background-color: #00FE44
+    content: ""
+    @include animation(blink 1s steps(2, start) infinite)
+    @include keyframes(blink)
+      to
+        visibility: hidden
+    
